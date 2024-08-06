@@ -9,16 +9,15 @@ begin
   CrearLista(lista);
   x.tipo:= otro;
   x.desc:= 'sa';
-   x.fecha_fin:= 'sa';
-    x.fecha_inicio:= 'sa';
-     x.hora_fin := 'sa';
-      x.hora_inicio:= 'sa';
-       x.titulo:= 'sa';
-        x.ubicacion:= 'sa';
-        x.id:=1;
+  x.fecha_fin:= '19/05/2005';
+  x.fecha_inicio:= '20/06/2007';
+  x.hora_fin := 'sa';
+  x.hora_inicio:= 'sa';
+  x.titulo:= 'sa';
+  x.ubicacion:= 'sa';
+  x.id:=1;
   Agregar(lista,x);
-  Mostrar_Evento(x);
-
+  Busqueda(lista);
   readkey;
 end.
 

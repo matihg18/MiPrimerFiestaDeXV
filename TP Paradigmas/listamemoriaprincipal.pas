@@ -3,7 +3,7 @@ unit ListaMemoriaPrincipal;
 interface
 
 uses
-  Classes, SysUtils;
+  crt, SysUtils;
 
 const
   N = 100;
@@ -28,6 +28,8 @@ type
       elem: array[1..N] of t_dato_lista;
   end;
 
+Function StrToTipo(dato: string):t_tipo;
+Function TipoToStr(dato: t_tipo):string;
 procedure Mostrar_Evento(x: t_dato_lista);
 function Valida_Fecha(x: shortstring): boolean;
 function Transf_Fecha(x: string): String;
@@ -46,8 +48,29 @@ procedure Recuperar(var l: t_lista; var e: t_dato_lista);
 
 implementation
 
+
+Function StrToTipo(dato: string):t_tipo;
+begin
+    case dato of
+    'cumpleanios': StrToTipo:= cumpleanios;
+    'aniversario': StrToTipo:= aniversario;
+    'reunion': StrToTipo:= reunion;
+    'otro': StrToTipo:= otro;
+    end;
+end;
+Function TipoToStr(dato: t_tipo):string;
+begin
+    case dato of
+    cumpleanios: TipoToStr:= 'cumpleanios';
+    aniversario: TipoToStr:= 'aniversario';
+    reunion: TipoToStr:= 'reunion';
+    otro: TipoToStr:= 'otro';
+    end;
+end;
+
 procedure Mostrar_Evento(x: t_dato_lista);
 begin
+  Writeln('');
   Writeln('ID: ', x.id);
   Writeln('Titulo: ',x.titulo);
   Writeln('Descripcion: ',x.desc);
@@ -57,6 +80,7 @@ begin
   Writeln('Hora de Inicio: ',x.hora_inicio);
   Writeln('Hora de Finalizacion: ',x.hora_fin);
   Writeln('Ubicacion: ',x.ubicacion);
+  readkey;
 end;
 
 function Valida_Fecha(x: shortstring): boolean;
