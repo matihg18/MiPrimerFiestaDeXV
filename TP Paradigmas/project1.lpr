@@ -7,17 +7,14 @@ var seleccionado:byte;
 
 begin
   CrearLista(lista);
-  x.tipo:= otro;
-  x.desc:= 'sa';
-  x.fecha_fin:= '19/05/2005';
-  x.fecha_inicio:= '19/05/2005';
-  x.hora_fin := 'sa';
-  x.hora_inicio:= 'sa';
-  x.titulo:= 'sa';
-  x.ubicacion:= 'sa';
-  x.id:=1;
-  Agregar(lista,x);
-  Busqueda(lista);
-  readkey;
+  While seleccionado <> 4 do
+  begin
+    menu_opciones(seleccionado);
+    case seleccionado of
+    1: Registrar_Evento(lista);
+    2: Busqueda(lista);
+    3: Eliminar_Evento(lista);
+    end;
+  end;
 end.
 

@@ -11,20 +11,25 @@ procedure Registrar_Evento(var l: t_lista);
 procedure Busqueda(var l: t_lista);
 procedure Buscar_Por_Fechas(var l:t_lista);
 procedure Buscar_Por_Evento(var l: t_lista);
+Procedure Buscar_Por_Titulo(var l: t_lista);
+procedure Eliminar_Evento(var l:t_lista);
+
 
 implementation
 
 procedure Registrar_Evento(var l: t_lista);
 var
+  aux: string;
   x: t_dato_lista;
 begin
    write('Ingrese titulo: ');
    readln(x.titulo);
-   {While not(x.tipo in t_tipo) do
+   While not(StrToTipo(aux) in [cumpleanios..otro]) do
    begin
      write('Ingrese tipo: ');
-     readln(x.tipo);
-   end; }
+     readln(aux);
+   end;
+   x.tipo:= StrToTipo(aux);
    write('Ingrese descripcion: ');
    readln(x.desc);
    while not(Valida_Fecha(x.fecha_inicio)) do
@@ -39,8 +44,10 @@ begin
    end;
    write('Ingrese hora de inicio: ');
    readln(x.hora_inicio);
-   write('Ingrese fecha de final: ');
+   write('Ingrese hora de final: ');
    readln(x.hora_fin);
+   Write('Ingrese ubicacion: ');
+   readln(x.ubicacion);
    x.id:= l.tam + 1;
    agregar(l,x);
 end;
@@ -52,7 +59,7 @@ begin
     case seleccionado of
          1: Buscar_Por_Evento(l);
          2: Buscar_Por_Fechas(l);
-         //3: Buscar_Por_Subcad(l)
+         3: Buscar_Por_Titulo(l)
     end;
 end;
 
@@ -99,6 +106,36 @@ begin
          Mostrar_Evento(aux);
       Siguiente(l);
    end;
+end;
+
+Procedure Buscar_Por_Titulo(var l: t_lista);
+var
+  buscado: string;
+  aux: t_dato_lista;
+begin
+  buscado:= '';
+  while length(buscado) < 3 do
+  begin
+  write('Ingrese el titulo del evento: ');
+  readln(buscado);
+  end;
+  Primero(l);
+  While not(Fin(l)) do
+  begin
+    recuperar(l,aux);
+    if Pos(buscado,aux.titulo)<>0 then
+      Mostrar_Evento(aux);
+    Siguiente(l);
+  end;
+end;
+
+procedure Eliminar_Evento(var l:t_lista);
+var aux: integer;
+  x: t_dato_lista;
+begin
+  Write('Ingrese el ID del evento: ');
+  readln(aux);
+  EliminarLista(l,aux,x);
 end;
 
 end.

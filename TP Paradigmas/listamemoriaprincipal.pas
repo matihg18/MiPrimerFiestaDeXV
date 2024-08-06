@@ -39,7 +39,7 @@ function Lista_Llena(var l: t_lista): boolean;
 function Lista_Vacia(var l: t_lista): boolean;
 procedure Desplazar_Atras(var l: t_lista; posicion: byte);
 procedure Desplazar_Adelante(var l: t_lista; posicion: byte);
-procedure EliminarLista(var l: t_lista; buscado: string; var x: t_dato_lista);
+procedure EliminarLista(var l: t_lista; buscado: integer; var x: t_dato_lista);
 procedure Siguiente(var l: t_lista);
 procedure Primero(var l: t_lista);
 function Fin(l: t_lista): boolean;
@@ -167,9 +167,9 @@ begin
     l.elem[i] := l.elem[i + 1];
 end;
 
-procedure EliminarLista(var l: t_lista; buscado: string; var x: t_dato_lista);
+procedure EliminarLista(var l: t_lista; buscado: integer; var x: t_dato_lista);
 begin
-  if (Transf_Fecha(l.elem[l.cab].fecha_inicio) = Transf_Fecha(buscado)) then
+  if (l.elem[l.cab].id = buscado) then
   begin
     x := l.elem[l.cab];
     Desplazar_Adelante(l, 1)
@@ -177,7 +177,7 @@ begin
   else
   begin
     l.act := l.cab + 1;
-    while (Transf_Fecha(l.elem[l.act].fecha_inicio) <> Transf_Fecha(buscado)) do
+    while (l.elem[l.act].id <> buscado) do
       inc(l.act);
     x := l.elem[l.act];
     Desplazar_Adelante(l, l.act);
