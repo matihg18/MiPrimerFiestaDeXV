@@ -42,10 +42,16 @@ begin
      write('Ingrese fecha de final: ');
      readln(x.fecha_fin);
    end;
-   write('Ingrese hora de inicio: ');
-   readln(x.hora_inicio);
-   write('Ingrese hora de final: ');
-   readln(x.hora_fin);
+   while not(Valida_Hora(x.hora_inicio) do
+   begin
+        write('Ingrese hora de inicio: ');
+        readln(x.hora_inicio);
+   end;
+   while not(Valida_Hora(x.hora_fin) do
+   begin
+        write('Ingrese hora de final: ');
+        readln(x.hora_fin);
+   end;
    Write('Ingrese ubicacion: ');
    readln(x.ubicacion);
    x.id:= l.tam + 1;
@@ -133,7 +139,7 @@ procedure Eliminar_Evento(var l:t_lista);
 var aux: integer;
   x: t_dato_lista;
 begin
-  Write('Ingrese el ID del evento');
+  Write('Ingrese el ID del evento: ');
   readln(aux);
   EliminarLista(l,aux,x);
 end;

@@ -28,6 +28,7 @@ type
       elem: array[1..N] of t_dato_lista;
   end;
 
+function valida_hora(hora: string): boolean;
 Function StrToTipo(dato: string):t_tipo;
 Function TipoToStr(dato: t_tipo):string;
 procedure Mostrar_Evento(x: t_dato_lista);
@@ -48,7 +49,20 @@ procedure Recuperar(var l: t_lista; var e: t_dato_lista);
 
 implementation
 
-
+function valida_hora(hora: string): boolean;
+begin
+  result:= true;
+  if not(hora[1] in ['0'..'2']) then
+    result:=false;
+  if not(hora[2] in ['0'..'9']) then
+    result:=false;
+  if hora[3]<>':' then
+    result:=false;
+  if not(hora[4] in ['0'..'5']) then
+    result:=false;
+  if not(hora[5] in ['0'..'9']) then
+    result:=false;
+end;
 Function StrToTipo(dato: string):t_tipo;
 begin
     case dato of

@@ -28,6 +28,7 @@ type
       elem: array[1..N] of t_dato_lista;
   end;
 
+function valida_hora(hora: string): boolean;
 Function StrToTipo(dato: string):t_tipo;
 Function TipoToStr(dato: t_tipo):string;
 procedure Mostrar_Evento(x: t_dato_lista);
@@ -39,7 +40,7 @@ function Lista_Llena(var l: t_lista): boolean;
 function Lista_Vacia(var l: t_lista): boolean;
 procedure Desplazar_Atras(var l: t_lista; posicion: byte);
 procedure Desplazar_Adelante(var l: t_lista; posicion: byte);
-procedure EliminarLista(var l: t_lista; buscado: string; var x: t_dato_lista);
+procedure EliminarLista(var l: t_lista; buscado: integer; var x: t_dato_lista);
 procedure Siguiente(var l: t_lista);
 procedure Primero(var l: t_lista);
 function Fin(l: t_lista): boolean;
@@ -48,7 +49,20 @@ procedure Recuperar(var l: t_lista; var e: t_dato_lista);
 
 implementation
 
-
+function valida_hora(hora: string): boolean;
+begin
+  result:= true;
+  if not(hora[1] in ('0'..'2')) then
+    result:=false;
+  if not(hora[2] in ('0'..'9')) then
+    result:=false;
+  if hora[3]<>':' then
+    result:=false;
+  if not(hora[4] in ('0'..'5')) then
+    result:=false;
+  if not(hora[5] in ('0'..'9')) then
+    result:=false;
+end;
 Function StrToTipo(dato: string):t_tipo;
 begin
     case dato of
@@ -167,7 +181,7 @@ begin
     l.elem[i] := l.elem[i + 1];
 end;
 
-procedure EliminarLista(var l: t_lista; buscado: string; var x: t_dato_lista);
+procedure EliminarLista(var l: t_lista; buscado: integer; var x: t_dato_lista);
 begin
   if (l.elem[l.cab].id = buscado) then
   begin
