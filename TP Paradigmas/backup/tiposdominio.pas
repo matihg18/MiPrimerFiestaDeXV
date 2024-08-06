@@ -58,16 +58,18 @@ end;
 procedure Buscar_Por_Evento(var l: t_lista);
 var buscado: string;
     aux: t_dato_lista;
+    aux_tipo: t_tipo;
 begin
    write('Ingrese tipo de evento a Buscar: ');
    readln(buscado);
-   //if not(Lowercase(buscado) in t_tipo) then writeln('No existe el Tipo de Evento Ingresado')
-   //else
+   aux_tipo:= StrToTipo(Lowercase(buscado));
+   if not(aux_tipo in [cumpleanios..otro]) then writeln('No existe el Tipo de Evento Ingresado')
+   else
    Primero(l);
        while not(Fin(l)) do
        begin
           Recuperar(l,aux);
-          if (aux.tipo = buscado) then
+          if (TipoToStr(aux.tipo) = buscado) then
              Mostrar_Evento(aux);
           Siguiente(l);
        end;
