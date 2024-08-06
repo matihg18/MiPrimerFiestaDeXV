@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="22" Y="10"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="tiposdominio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TiposDominio"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="44" Y="9"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="listamemoriaprincipal.pas"/>
+        <UnitName Value="ListaMemoriaPrincipal"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="33"/>
+        <CursorPos Y="33"/>
+        <FoldState Value=" T3iJ05C PiXjG0b"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="interfaz.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Interfaz"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="8"/>
+        <CursorPos Y="45"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\unit_validacion.pas"/>
+        <UnitName Value="Unit_Validacion"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="54"/>
+        <CursorPos X="41" Y="75"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\unit_utils_scoring.pas"/>
+        <UnitName Value="Unit_Utils_Scoring"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="31" Y="29"/>
+        <UsageCount Value="10"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="11">
+      <Position>
+        <Filename Value="interfaz.pas"/>
+        <Caret Line="3" Column="51"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="6" Column="29"/>
+      </Position>
+      <Position>
+        <Filename Value="interfaz.pas"/>
+        <Caret Line="7" Column="20"/>
+      </Position>
+      <Position>
+        <Filename Value="interfaz.pas"/>
+        <Caret Line="8"/>
+      </Position>
+      <Position>
+        <Filename Value="interfaz.pas"/>
+        <Caret Line="6"/>
+      </Position>
+      <Position>
+        <Filename Value="interfaz.pas"/>
+        <Caret Line="8" Column="7"/>
+      </Position>
+      <Position>
+        <Filename Value="interfaz.pas"/>
+        <Caret Line="42" Column="7" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="3" Column="29"/>
+      </Position>
+      <Position>
+        <Filename Value="tiposdominio.pas"/>
+        <Caret Line="19" Column="13"/>
+      </Position>
+      <Position>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="5" Column="5"/>
+      </Position>
+      <Position>
+        <Filename Value="tiposdominio.pas"/>
+        <Caret Line="25" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="listamemoriaprincipal.pas"/>
+        <Caret Line="33" TopLine="33"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
