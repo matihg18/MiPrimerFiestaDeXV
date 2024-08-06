@@ -26,6 +26,20 @@ begin
       Mostrar_Evento(aux);
   end;
 end;
+function valida_hora(hora: string): boolean;
+begin
+  result:= true;
+  if not(hora[1] in ('0'..'2')) then
+    result(false);
+  if not(hora[2] in ('0'..'9')) then
+    result(false);
+  if hora[3]<>':' then
+    result(false);
+  if not(hora[4] in ('0'..'5')) then
+    result(false);
+  if not(hora[5] in ('0'..'9')) then
+    result(false);
+end;
 
 end.
 
