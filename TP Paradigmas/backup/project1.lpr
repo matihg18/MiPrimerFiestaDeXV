@@ -2,7 +2,7 @@ program project1;
 
 uses crt,TiposDominio, Interfaz, ListaMemoriaPrincipal;
 var seleccionado:byte;
-    x: t_dato_lista;
+    x: t_evento;
     lista: t_lista;
 
 begin
@@ -13,6 +13,7 @@ begin
     case seleccionado of
     1: Registrar_Evento(lista);
     2: Busqueda(lista);
+    3: Eliminar_Evento(lista);
     end;
   end;
 end.
